@@ -44,8 +44,12 @@ getCodeInseeParNomVille(nomVille)
         if (codeInsee) {
             getMeteoParCodeInsee(codeInsee)
                 .then(meteo => {
-                    console.log(`Météo pour ${nomVille} :`, meteo);
+                    // Afficher uniquement les informations météorologiques spécifiques
+                    console.log(`Météo pour ${nomVille} :`);
+                    console.log(`température minimal: ${meteo.forecast.tmin}`);
+                    console.log(`température maximal: ${meteo.forecast.tmax}`);
+                    console.log(`probabilité pluie: ${meteo.forecast.probarain}`);
+                    console.log(`Ensoleillement journalier : ${meteo.forecast.sun_hours}`);
                 });
         }
     });
-
