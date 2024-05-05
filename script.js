@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
 
     const postalCodeInput = document.getElementById("code-postal");
@@ -84,4 +83,3 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
   });
->>>>>>> 4c1ba35 (Projet à jour)
