@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 <title>Formulaire de sélection de ville par code postal</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/css/select2.min.css" rel="stylesheet" />
 <style>
@@ -73,10 +74,19 @@
     }
   }
 </style>
+=======
+<title>Météo du jour</title>
+<style>
+
+</style>
+<script defer src="script.js"></script>
+<link rel="stylesheet" href="file.css" />
+>>>>>>> 4c1ba35 (Projet à jour)
 </head>
 <body>
 
 <div class="container fade-in">
+<<<<<<< HEAD
   <h1>Sélectionnez une ville par code postal</h1>
   <form>
     <label for="code-postal">Code postal :</label>
@@ -127,5 +137,26 @@
   });
 </script>
 
+=======
+  <h1>Météo du jour</h1>
+  <h2>Sélectionnez une ville à l'aide d'un code postal</h2>
+  <section id="infoville">
+  <form>
+    <label for="code-postal">Code postal :</label>
+    <input type="text" id="code-postal" pattern="\d{5}" placeholder="Entrez un code postal (5 chiffres)" required>
+    <label for="menu-deroulant" class="sr-only"
+    aria-label="Choix de la ville">Ville :</label>
+    <select id="menu-deroulant"></select>
+  </form>
+  <button id="submitbutton">Valider</button>
+</section>
+<section id="Infometeo">
+    <p id="temp-min"></p>
+    <p id="temp-max"></p>
+    <p id="prob-pluie"></p>
+    <p id="ensoleillement"></p>
+</section>
+</div>
+>>>>>>> 4c1ba35 (Projet à jour)
 </body>
 </html>
