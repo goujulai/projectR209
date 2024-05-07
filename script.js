@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('temp-max').innerText = `Température maximale : ${data.forecast.tmax}°C`;
       document.getElementById('prob-pluie').innerText = `Probabilité de pluie : ${data.forecast.probarain}%`;
       document.getElementById('ensoleillement').innerText = `Ensoleillement journalier : ${displayHours(data.forecast.sun_hours)}`;
+      document.getElementById('submitbutton').innerText =  'Valider'
       document.getElementById('new').innerText =  'Nouvelle recherche'
       Button.style.display = 'inline'
     } catch (error) {
