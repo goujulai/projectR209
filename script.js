@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const villeSelect = document.getElementById("menu-deroulant");
     const submitButton = document.getElementById("submitbutton");
     const Button = document.getElementById('new')
-    const form = document.getElementById('section');
 
     async function getCitiesByPostalCode(postalCode) {
       try {
@@ -78,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('prob-pluie').innerText = `Probabilité de pluie : ${data.forecast.probarain}%`;
       document.getElementById('ensoleillement').innerText = `Ensoleillement journalier : ${displayHours(data.forecast.sun_hours)}`;
       document.getElementById('new').innerText =  'Nouvelle recherche'
-      Button.style.display = 'inline'
       form.style.display = 'none';
     } catch (error) {
       console.error("Erreur lors de la requête API meteoConcept:", error);
