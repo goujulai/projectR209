@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const postalCodeInput = document.getElementById("code-postal");
     const villeSelect = document.getElementById("menu-deroulant");
     const submitButton = document.getElementById("submitbutton");
+    const Button = document.getElementById('new')
+    const form = document.getElementById('section');
 
     async function getCitiesByPostalCode(postalCode) {
       try {
@@ -18,10 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
     postalCodeInput.addEventListener('input', async () => {
       const codePostal = postalCodeInput.value;
       villeSelect.innerHTML = "";
-      if (codePostal.length === 5) {
+      if (/^\d{5}$/.test(codePostal)) {
         try {
           const data = await getCitiesByPostalCode(codePostal);
           displayCities(data);
+          document.getElementById('submitbutton').innerText = 'Validé'
+
         } catch (error) {
           console.error(
             "Une erreur est survenue lors de la recherche de la commune :",
@@ -73,6 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('temp-max').innerText = `Température maximale : ${data.forecast.tmax}°C`;
       document.getElementById('prob-pluie').innerText = `Probabilité de pluie : ${data.forecast.probarain}%`;
       document.getElementById('ensoleillement').innerText = `Ensoleillement journalier : ${displayHours(data.forecast.sun_hours)}`;
+      document.getElementById('new').innerText =  'Nouvelle recherche'
+      Button.style.display = 'inline'
+      form.style.display = 'none';
     } catch (error) {
       console.error("Erreur lors de la requête API meteoConcept:", error);
       throw error;
@@ -80,6 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-    
+Button.addEventListener("click", function () {
+  location.reload();
+  
+  });    
+  
 
   });
